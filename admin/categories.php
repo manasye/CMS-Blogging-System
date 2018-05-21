@@ -18,11 +18,7 @@
                         </h1>
 
                         <div class="col-xs-6">
-
-                            <?php
-                                insertCategories();
-                            ?>
-
+                            
                             <form action="" method="post">
                                 <div class="form-group">
                                     <label for="cat_title">Add categories</label>
@@ -32,6 +28,11 @@
                                     <input class="btn btn-primary" type="submit" name="submit" value="Add category">
                                 </div>
                             </form>
+                            
+                            <?php
+                                insertCategories();
+                            ?>
+
                             
                             <?php
                                 if (isset($_GET['edit'])) {
@@ -49,6 +50,8 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Category Title</th>
+                                        <th>Delete</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
