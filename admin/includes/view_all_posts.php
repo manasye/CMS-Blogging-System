@@ -38,7 +38,21 @@
                     echo "<td>$post_id</td>";
                     echo "<td>$post_author</td>";
                     echo "<td>$post_title</td>";
-                    echo "<td>$post_category_id</td>";
+
+                    $query = "SELECT * FROM categories WHERE cat_id = $post_category_id";
+                    $category_result = mysqli_query($connection, $query);
+                    if (!$category_result) {
+                        die('Query FAILED ' . mysqli_error($connection));
+                    }
+                    
+                    while ($row2 = mysqli_fetch_assoc($category_result)) {
+                        $cat_id = $row2['cat_id'];
+                        $cat_title = $row2['cat_title'];
+                    }
+
+                    echo "<td>$cat_title</td>";
+                    
+                    
                     echo "<td>$post_status</td>";
                     echo "<td>
                         <img width='200' src='../images/$post_image' alt='image'>
