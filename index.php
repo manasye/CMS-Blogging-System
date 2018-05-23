@@ -16,7 +16,7 @@
             <div class="col-md-8">
 
                 <?php
-                    $query = "SELECT * FROM posts";
+                    $query = "SELECT * FROM posts WHERE post_status = 'published'";
                     $result = mysqli_query($connection, $query);
 
                     while ($row = mysqli_fetch_assoc($result)) {
@@ -26,7 +26,8 @@
                         $post_date = $row['post_date'];
                         $post_image = $row['post_image'];
                         $post_content = substr($row['post_content'], 0, 200) . '...';
-                        
+                        $post_status = $row['post_status'];
+
                         ?>
 
                         <!-- Blog Post -->
@@ -45,7 +46,7 @@
 
                         <hr>
 
-                    <?php }
+                    <?php } 
                 ?>
 
             </div>
