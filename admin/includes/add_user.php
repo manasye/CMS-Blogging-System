@@ -1,18 +1,16 @@
 <?php
-
-    global $connection;
     if (isset($_POST['create_user'])) {
         $user_firstname = $_POST['user_firstname'];
         $user_lastname = $_POST['user_lastname'];
         $user_role = $_POST['user_role'];
         $username = $_POST['username'];
         $user_email = $_POST['user_email'];
-        $user_password = $_POST['user_password']
+        $user_password = $_POST['user_password'];
 
-        $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date
-        , post_image, post_content, post_tags, post_status) ";
-        $query .= "VALUES($post_category_id, '$post_title', '$post_author', now(), '$post_image', 
-        '$post_content', '$post_tags', '$post_status')";
+        $query = "INSERT INTO users(username, user_password, user_firstname, 
+        user_lastname, user_email, user_role) ";
+        $query .= "VALUES('$username', '$user_password', '$user_firstname', 
+        '$user_lastname', '$user_email', '$user_role')";
 
         $add_user_result = mysqli_query($connection, $query);
         confirm($add_user_result);
@@ -61,8 +59,8 @@
 </form>
 
 <?php
-    if (isset($_POST['create_post'])) {
-        if ($result) {
+    if (isset($_POST['create_user'])) {
+        if ($add_user_result) {
             echo "<h4>Data have been saved succesfully</h4>";
         }
     }
