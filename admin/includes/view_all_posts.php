@@ -85,7 +85,7 @@
                         <?php
                         echo "<td>$post_id</td>";
                         echo "<td>$post_author</td>";
-                        echo "<td>$post_title</td>";
+                        echo "<td><a href='../post.php?p_id=$post_id'>$post_title</a></td>";
 
                         $query = "SELECT * FROM categories WHERE cat_id = $post_category_id";
                         $category_result = mysqli_query($connection, $query);
@@ -100,7 +100,6 @@
 
                         echo "<td>$cat_title</td>";
                         
-                        
                         echo "<td>$post_status</td>";
                         echo "<td>
                             <img width='200' src='../images/$post_image' alt='image'>
@@ -112,7 +111,7 @@
                         echo "<td><a href='posts.php?source=edit_post&p_id=$post_id'>EDIT</a></td>";
                         echo "</tr>";
                     }
-                
+
                 ?>
 
                 <?php

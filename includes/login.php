@@ -39,7 +39,7 @@
             }
 
         } else {
-            echo "Field cannot be empty";
+            echo "<script>alert('Field can\'t be empty')</script>";
         }
 
     }

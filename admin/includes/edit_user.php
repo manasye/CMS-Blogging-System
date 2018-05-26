@@ -53,7 +53,7 @@
 
     <div class="form-group">
         <select name="user_role">
-            <option value="subscriber"><?php echo $old_user_role?></option>
+            <option value="<?php echo $old_user_role?>"><?php echo $old_user_role?></option>
             <?php
                 if ($old_user_role == 'admin') {
                     echo "<option value='subscriber'>Subscriber</option>";
