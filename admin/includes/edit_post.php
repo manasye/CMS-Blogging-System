@@ -87,7 +87,17 @@
 
     <div class="form-group">
         <label for="status">Post Status</label>
-        <input value="<?php echo $post_status ?>"type="text" class="form-control" name="post_status">
+        <br>
+        <select name="post_status">
+            <option value='<?php echo $post_status ?>'><?php echo $post_status ?></option>
+            <?php
+                if ($post_status == 'published') {
+                    echo "<option value='draft'>draft</option>";
+                } else {
+                    echo "<option value='published'>published</option>";
+                }
+            ?>
+        </select>
     </div>
 
     <div class="form-group">

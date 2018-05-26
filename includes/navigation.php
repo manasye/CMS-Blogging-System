@@ -23,6 +23,14 @@
                         }
                     ?>
                     <li><a href = 'admin'> Admin </a></li>
+                    <?php
+                        if (isset($_GET['p_id'])) {
+                            if (isset($_SESSION['user_role'])) {
+                                $post_id = $_GET['p_id'];
+                                echo "<li><a href='admin/posts.php?source=edit_post&p_id=$post_id'>Edit post</a></li>";
+                            }
+                        }
+                    ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
